@@ -9,7 +9,7 @@ pipeline{
                 sh '''
                 rm -rf ***REMOVED***;
                 git clone ***REMOVED***://github.com/italia/***REMOVED***.git;
-                cd ***REMOVED***;
+                cd ***REMOVED***/common;
                 sbt -DSTAGING=true clean compile; sbt publishLocal;
                 cd ..; rm -rf ***REMOVED***;
                 sbt " -DSTAGING=true clean compile; docker:publish"                
