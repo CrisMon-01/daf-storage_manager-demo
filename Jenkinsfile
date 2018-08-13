@@ -25,8 +25,8 @@ pipeline{
                     sh '''
                     cd kubernetes
                     sh config-map-test.sh
-                    kubectl delete -f  ***REMOVED***-storage-manager-test.yaml
-                    kubectl create -f  ***REMOVED***-storage-manager-test.yaml
+                    kubectl delete -f  ***REMOVED***-storage-manager-test.yml
+                    kubectl create -f  ***REMOVED***-storage-manager-test.yml
                     '''
             }
             }
