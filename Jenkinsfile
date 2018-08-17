@@ -7,11 +7,6 @@ pipeline{
              script{
              if(***REMOVED***.BRANCH_NAME=='testci'){
                 sh '''
-                rm -rf ***REMOVED***;
-                git clone ***REMOVED***://github.com/italia/***REMOVED***.git;
-                cd ***REMOVED***/common;
-                sbt -DSTAGING=true clean compile; sbt publishLocal;
-                cd ..; rm -rf ***REMOVED***;
                 sbt " -DSTAGING=true clean compile; docker:publish"                
                 '''
                 }
@@ -22,11 +17,11 @@ pipeline{
             steps{
             script{
                 if(***REMOVED***.BRANCH_NAME=='testci'){
+                    // kubectl delete -f  ***REMOVED***-storage-manager-test.yml
                     sh '''
                     cd kubernetes
-                    sh config-map-test.sh
-                    kubectl delete -f  ***REMOVED***-storage-manager-test.yml
-                    kubectl create -f  ***REMOVED***-storage-manager-test.yml
+                    sh config-map-test.sh              
+                    kubectl apply -f  ***REMOVED***-storage-manager-test.yml
                     '''
             }
             }
