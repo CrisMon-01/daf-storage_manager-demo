@@ -4,7 +4,6 @@ pipeline{
      stages {
         stage('Build') {
          steps {
-             try{
              script{
              if(***REMOVED***.BRANCH_NAME=='testci'){
                 slackSend "Build Started - ${***REMOVED***.JOB_NAME} ${***REMOVED***.BUILD_NUMBER}"
@@ -14,17 +13,9 @@ pipeline{
                 }
              }
             }
-            catch(e){
-         currentBuild.result = "FAILED"
-        notifyFailed()
-        throw e
-        slackSend (color: '#FF0000', message: "FAILED: Job '${***REMOVED***.JOB_NAME} [${***REMOVED***.BUILD_NUMBER}]' (${***REMOVED***.BUILD_URL})")
-     }
          }
-        }
         stage('Staging'){
             steps{
-                try{
             script{
                 if(***REMOVED***.BRANCH_NAME=='testci'){
                     // kubectl delete -f  ***REMOVED***-storage-manager-test.yml
@@ -36,13 +27,6 @@ pipeline{
                     slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '${***REMOVED***.JOB_NAME} [${***REMOVED***.BUILD_NUMBER}]' (${***REMOVED***.BUILD_URL})")
             }
             }
-            }
-            catch(e){
-         currentBuild.result = "FAILED"
-        notifyFailed()
-        throw e
-        slackSend (color: '#FF0000', message: "FAILED: Job '${***REMOVED***.JOB_NAME} [${***REMOVED***.BUILD_NUMBER}]' (${***REMOVED***.BUILD_URL})")
-     }
         }
      }     
      }
