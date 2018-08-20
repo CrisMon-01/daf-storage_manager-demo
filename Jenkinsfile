@@ -17,9 +17,9 @@ def notifySlack(String buildStatus = 'STARTED') {
 
 pipeline{
     agent any
-    slackSend (message: "BUILD START: Job '${***REMOVED***.JOB_NAME} [${***REMOVED***.BUILD_NUMBER}]' (${***REMOVED***.BUILD_URL})")
-    try{
+    //slackSend (message: "BUILD START: Job '${***REMOVED***.JOB_NAME} [${***REMOVED***.BUILD_NUMBER}]' (${***REMOVED***.BUILD_URL})")
      stages {
+        try{
         stage('Build') {
          steps {
              script{
