@@ -6,7 +6,7 @@ pipeline{
          steps {
              script{
              if(***REMOVED***.BRANCH_NAME=='testci'){
-                slackSend "Build Started - ${***REMOVED***.JOB_NAME} ${***REMOVED***.BUILD_NUMBER}"
+                slackSend (color: '#00FF00', message: "BUILD START: Job '${***REMOVED***.JOB_NAME} [${***REMOVED***.BUILD_NUMBER}]' (${***REMOVED***.BUILD_URL})")
                 sh '''
                 sbt " -DSTAGING=true clean compile; docker:publish"                
                 '''
