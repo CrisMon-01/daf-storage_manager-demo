@@ -6,7 +6,7 @@ pipeline{
          steps {
              script{
              if(***REMOVED***.BRANCH_NAME=='testci'){
-                slackSend (message: "BUILD START: Job '${***REMOVED***.JOB_NAME} [${***REMOVED***.BUILD_NUMBER}]' (${***REMOVED***.BUILD_URL})")
+                slackSend (message: "BUILD START: Job '${***REMOVED***.JOB_NAME} [${***REMOVED***.BUILD_NUMBER}]' CHECK THE RESULT ON: ***REMOVED***://***REMOVED******REMOVED***.***REMOVED***.it/blue/organizations/jenkins/CI-Storage_Manager/activity")
                 sh '''
                 sbt " -DSTAGING=true clean compile; docker:publish"                  
                 '''
@@ -24,7 +24,7 @@ pipeline{
                     sh config-map-test.sh              
                     kubectl apply --force -f  ***REMOVED***-storage-manager-test.yml
                     '''
-                    slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '${***REMOVED***.JOB_NAME} [${***REMOVED***.BUILD_NUMBER}]' (${***REMOVED***.BUILD_URL})")
+                    slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '${***REMOVED***.JOB_NAME} [${***REMOVED***.BUILD_NUMBER}]' ***REMOVED***://***REMOVED******REMOVED***.***REMOVED***.it/blue/organizations/jenkins/CI-Storage_Manager/activity")
             }
             }
         }
