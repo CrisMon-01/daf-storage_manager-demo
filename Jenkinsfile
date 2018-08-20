@@ -8,7 +8,7 @@ pipeline{
              if(***REMOVED***.BRANCH_NAME=='testci'){
                 slackSend (message: "BUILD START: Job '${***REMOVED***.JOB_NAME} [${***REMOVED***.BUILD_NUMBER}]' (${***REMOVED***.BUILD_URL})")
                 sh '''
-                sbt " -DSTAGING=true clean compile; docker:publish"                
+                sbt " -DSTAGING=true clean compile; docker:publish"                  
                 '''
                 }
              }
