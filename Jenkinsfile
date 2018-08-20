@@ -22,7 +22,7 @@ pipeline{
                     sh '''
                     cd kubernetes
                     sh config-map-test.sh              
-                    kubectl apply -f  ***REMOVED***-storage-manager-test.yml
+                    kubectl apply --force -f  ***REMOVED***-storage-manager-test.yml
                     '''
                     slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '${***REMOVED***.JOB_NAME} [${***REMOVED***.BUILD_NUMBER}]' (${***REMOVED***.BUILD_URL})")
             }
