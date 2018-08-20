@@ -29,7 +29,7 @@ pipeline{
             }
         }
      }     
-     }
+     }{
      post { 
         failure { 
             slackSend (color: '#ff0000', message: "FAIL: Job '${***REMOVED***.JOB_NAME} [${***REMOVED***.BUILD_NUMBER}]' ***REMOVED***://***REMOVED******REMOVED***.***REMOVED***.it/blue/organizations/jenkins/CI-Storage_Manager/activity")
