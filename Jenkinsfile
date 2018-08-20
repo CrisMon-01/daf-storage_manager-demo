@@ -2,6 +2,7 @@ pipeline{
     agent any
     
      stages {
+         try{
         stage('Build') {
          steps {
              script{
@@ -24,10 +25,17 @@ pipeline{
                     sh config-map-test.sh              
                     kubectl apply -f  ***REMOVED***-storage-manager-test.yml
                     '''
-                    slackSend "Build Finished - ${***REMOVED***.JOB_NAME} ${***REMOVED***.BUILD_NUMBER} check the result on: ***REMOVED***://***REMOVED******REMOVED***.***REMOVED***.it "
+                    slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '${***REMOVED***.JOB_NAME} [${***REMOVED***.BUILD_NUMBER}]' (${***REMOVED***.BUILD_URL})")
             }
             }
         }
+     }
+     }
+     catch(e){
+         currentBuild.result = "FAILED"
+        notifyFailed()
+        throw e
+        slackSend (color: '#FF0000', message: "FAILED: Job '${***REMOVED***.JOB_NAME} [${***REMOVED***.BUILD_NUMBER}]' (${***REMOVED***.BUILD_URL})")
      }
      }
 }
