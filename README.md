@@ -3,6 +3,9 @@
 
 ## Deployment
 
+### status
+***REMOVED***://***REMOVED******REMOVED***.***REMOVED***.it/job/CI-Storage_Manager/job/testci/badge/icon?
+
 ### requirements
 
 1. you should be logged into the internal nexus repository
