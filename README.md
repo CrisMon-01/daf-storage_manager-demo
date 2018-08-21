@@ -4,7 +4,7 @@
 ## Deployment
 
 ### status
-[Build Status](***REMOVED***://131.1.252.41/job/CI-Storage_Manager/job/testci/badge/icon)
+![Build Status](***REMOVED***://131.1.252.41/job/CI-Storage_Manager/job/testci/badge/icon)
 
 ### requirements
 
