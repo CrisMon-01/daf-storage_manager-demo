@@ -4,7 +4,7 @@
 ## Deployment
 
 ### status
-***REMOVED***://***REMOVED******REMOVED***.***REMOVED***.it/job/CI-Storage_Manager/job/testci/badge/icon?
+![Image](***REMOVED***://***REMOVED******REMOVED***.***REMOVED***.it/job/CI-Storage_Manager/job/testci/badge/icon?)
 
 ### requirements
 
