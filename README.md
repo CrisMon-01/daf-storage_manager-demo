@@ -1,10 +1,9 @@
 # Storage Manager
 
-
 ## Deployment
 
 ### status
-[Build Status](***REMOVED***://131.1.252.41/buildStatus/icon?job=CI-Storage_Manager/testci)
+[Build Status](***REMOVED***://131.1.252.41:8080/job/CI-Storage_Manager/job/testci/badge/icon)
 
 ### requirements
 
